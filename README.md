@@ -1,6 +1,6 @@
 # go-proxy-bing
 
-基于微软 New Bing 简单定制，拥有一致的 UI 体验，支持 ChatGPT 提示词，国内可用，基本兼容微软 Bing AI 所有功能，无需登录即可畅聊。
+基于New Bing 简单定制，拥有一致的 UI 体验，支持 ChatGPT 提示词，国内可用，基本兼容微软 Bing AI 所有功能，无需登录即可畅聊。
 
 ⭐ 国内可用 （部署服务器需要直连 www.bing.com 不重定向 CN ，可配置 socks 连接）
 
@@ -14,7 +14,7 @@
   - [网页展示](#网页展示)
   - [侧边栏](#侧边栏)
   - [演示站点](#演示站点)
-  - [获取 Cookie](#获取Cookie)
+  - [获取Cookie](#获取Cookie)
   - [环境变量](#环境变量)
   - [部署](#部署)
     - [Docker](#Docker)
@@ -60,7 +60,7 @@
 
 ### 甲骨文小鸡仔，轻虐
 
-- https://bing.vcanbb.top
+- https://bing.arch.run
 
 ### Railway 搭建
 
