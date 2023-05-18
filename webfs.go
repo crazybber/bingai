@@ -1,4 +1,4 @@
-package web
+package main
 
 import (
 	"embed"
@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 )
 
-//go:embed *
+//go:embed web/*
 var webFS embed.FS
 
 var IS_DEBUG_MODE bool
