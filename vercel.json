@@ -10,7 +10,7 @@
 "routes": [
 {
 "src": "/web/.*",
-"dest": "/webfs.go"
+"dest": "/main.go"
 },
 {
 "src": "/.*",
