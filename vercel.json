@@ -3,6 +3,7 @@
   "version": 2,
   "builds": [
     {
+      "src": ["api/{index,chathub}.go","webfs.go"],
       "use": "@vercel/go"
     }
   ],
