@@ -1,21 +1,19 @@
 {
-"name": "go-proxy-bingai",
-"version": 2,
-"builds": [
-{
-"src": "/main.go",
-"use": "@vercel/go"
-}
-],
-"routes": [
-{
-"src": "/",
-"dest": "/web/index.html"
-},
-"src": "/web/.*",
-"dest": "/web/index.html"
-},
-{
-"src": "/.*",
-"dest": "/api/index.go"
+  "name": "go-proxy-bingai",
+  "version": 2,
+  "builds": [
+    {
+      "use": "@vercel/go"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/web/.*",
+      "dest": "/api/web.go"
+    },
+    {
+      "src": "/.*",
+      "dest": "/api/index.go"
+    }
+  ]
 }
