@@ -3,14 +3,14 @@
 "version": 2,
 "builds": [
 {
-"src": "/api/{index,chathub}.go",
+"src": "/main.go",
 "use": "@vercel/go"
 }
 ],
 "routes": [
 {
 "src": "/web/.*",
-"dest": "/main.go"
+"dest": "/web/index.html"
 },
 {
 "src": "/.*",
