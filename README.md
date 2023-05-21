@@ -58,7 +58,7 @@
 
 ## 演示站点
 
-### 甲骨文小鸡仔，轻虐
+### bing magic轻虐
 
 - https://bing.arch.run
 
