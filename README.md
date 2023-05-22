@@ -190,7 +190,7 @@ RAILWAY_DOCKERFILE_PATH=docker/Dockerfile
 
 ![Render 域名](./docs/img/render-2.png)
 
-## TODO
+### TODO
 
 - [x] 撰写
 - [x] Vue3 重构
@@ -198,3 +198,7 @@ RAILWAY_DOCKERFILE_PATH=docker/Dockerfile
 - [x] 历史聊天
 - [ ] 导出消息到本地（Markdown、图片、PDF）
 - [ ] 简单访问权限控制
+
+###  thanks
+
+a great tanks for [adams549659584](https://github.com/adams549659584/go-proxy-bingai)
