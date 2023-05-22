@@ -18,7 +18,7 @@ var (
 )
 
 func init() {
-	IS_DEBUG_MODE = os.Getenv("Go_Proxy_BingAI_Debug") != ""
+	IS_DEBUG_MODE = os.Getenv("Go_Proxy_BingAI_Debug") == "true"
 
 	var err error
 	if IS_DEBUG_MODE {
@@ -50,7 +50,7 @@ func initWebPathMapByFS() error {
 			return err
 		}
 		if !d.IsDir() {
-			WEB_PATH_MAP["/web/"+path] = true
+			WEB_PATH_MAP["/"+path] = true
 		}
 		return nil
 	})
