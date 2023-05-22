@@ -15,9 +15,9 @@ tasks:
       - rm -rf release
       # extended globbing is not supported
       # - rm -rf web/!(web.go)
-      - cp web/web.go web.go
+      # - cp web/web.go web.go
       - rm -rf web/*
-      - mv web.go web/web.go
+      # - mv web.go web/web.go
   build_web:
     dir: frontend
     cmds:

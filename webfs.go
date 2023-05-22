@@ -1,4 +1,4 @@
-package web
+package main
 
 import (
 	"embed"
@@ -8,15 +8,17 @@ import (
 	"path/filepath"
 )
 
-//go:embed *
-var webFS embed.FS
-
-var IS_DEBUG_MODE bool
-
-var WEB_PATH_MAP = make(map[string]bool)
+var (
+	//go:embed web/*
+	webFS embed.FS
+	// is debug or not
+	IS_DEBUG_MODE bool
+	//path mapping
+	WEB_PATH_MAP = make(map[string]bool)
+)
 
 func init() {
-	IS_DEBUG_MODE = os.Getenv("Go_Proxy_BingAI_Debug") != ""
+	IS_DEBUG_MODE = os.Getenv("Go_Proxy_BingAI_Debug") == "true"
 
 	var err error
 	if IS_DEBUG_MODE {
@@ -48,7 +50,7 @@ func initWebPathMapByFS() error {
 			return err
 		}
 		if !d.IsDir() {
-			WEB_PATH_MAP["/web/"+path] = true
+			WEB_PATH_MAP["/"+path] = true
 		}
 		return nil
 	})
