@@ -14,7 +14,6 @@ tasks:
       - rm -rf frontend/node_modules
       - rm -rf release
       # extended globbing is not supported
-      # - rm -rf web/!(web.go)
       # - cp web/web.go web.go
       - rm -rf web/*
       # - mv web.go web/web.go

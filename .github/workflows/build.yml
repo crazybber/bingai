@@ -1,9 +1,8 @@
-name: Build Go-Proxy-BingAI
+name: Build go-proxy-bingai
 on:
   push:
     tags:
       - v*
-
 jobs:
   release:
     runs-on: ubuntu-latest
