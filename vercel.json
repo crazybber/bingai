@@ -4,11 +4,11 @@
   "routes": [
     {
       "src": "/web/.*",
-      "dest": "/api/web.go"
+      "dest": "/api/web"
     },
     {
       "src": "/.*",
-      "dest": "/api/index.go"
+      "dest": "/api/index"
     }
   ]
 }
