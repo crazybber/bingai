@@ -88,7 +88,7 @@ jobs:
           asset_name: go-proxy-bingai-linux-arm64.tar.gz
           asset_content_type: application/gzip
 
-      - name: build windows amd64 version
+      - name: build windows arm64 version
         run: |
           GOOS=windows GOARCH=arm64 go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai.exe main.go
 
