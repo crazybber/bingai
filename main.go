@@ -9,7 +9,22 @@ import (
 	"time"
 )
 
+var (
+	version   string = "latest"
+	buildDate string = "latest"
+	commitId  string = "crazybber"
+)
+
 func main() {
+
+	//return version + "-" + buildDate + "-" + commitId when visiting /ver url
+	http.HandleFunc("/ver/", func(w http.ResponseWriter, r *http.Request) {
+		// Concatenate variables into response string
+		response := version + " " + buildDate + " " + commitId
+		w.Write([]byte(response))
+
+	})
+
 	http.HandleFunc("/web/", webStatic)
 
 	http.HandleFunc("/sydney/ChatHub", api.ChatHub)
