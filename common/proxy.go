@@ -20,8 +20,10 @@ import (
 )
 
 var (
+	MOBILE_USER_AGENT  = "Mozilla/5.0 (iPhone; CPU iPhone OS 15_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.7 Mobile/15E148 Safari/605.1.15 BingSapphire/1.0.410427012"
+	OTHER_USER_AGENT   = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35"
 	BING_SYDNEY_DOMAIN = "https://sydney.bing.com"
-	// BING_CHAT_URL, _ = url.Parse(BING_CHAT_DOMAIN + "/sydney/ChatHub")
+	// BING_CHAT_URL, _  = url.Parse(BING_CHAT_DOMAIN + "/sydney/ChatHub")
 	BING_SYDNEY_URL, _ = url.Parse(BING_SYDNEY_DOMAIN)
 	BING_URL, _        = url.Parse("https://www.bing.com")
 	// EDGE_SVC_URL, _     = url.Parse("https://edgeservices.bing.com")
@@ -146,12 +148,12 @@ func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 
 		// m pc 画图大小不一样
 		if isMobile {
-			req.Header.Set("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 15_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.7 Mobile/15E148 Safari/605.1.15 BingSapphire/1.0.410427012")
+			req.Header.Set("User-Agent", MOBILE_USER_AGENT)
 		} else {
-			req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35")
+			req.Header.Set("User-Agent", OTHER_USER_AGENT)
 		}
 
-		for hKey, _ := range req.Header {
+		for hKey := range req.Header {
 			if _, ok := KEEP_REQ_HEADER_MAP[hKey]; !ok {
 				req.Header.Del(hKey)
 			}

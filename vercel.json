@@ -10,19 +10,19 @@
   "routes": [
     {
       "src": "/sysconf",
-      "dest": "/api/sysConfig.go"
+      "dest": "/api/sysConfig"
     },
     {
       "src": "/sydney/.*",
-      "dest": "/api/sydney.go"
+      "dest": "/api/sydney"
     },
     {
       "src": "/web/.*",
-      "dest": "/api/web.go"
+      "dest": "/api/web"
     },
     {
       "src": "/.*",
-      "dest": "/api/index.go"
+      "dest": "/api/index"
     }
   ]
 }
