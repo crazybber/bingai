@@ -2,6 +2,7 @@ package main
 
 import (
 	"adams549659584/go-proxy-bingai/api"
+	"adams549659584/go-proxy-bingai/api/helper"
 	"adams549659584/go-proxy-bingai/common"
 	"log"
 	"net/http"
@@ -54,6 +55,11 @@ func webStatic(w http.ResponseWriter, r *http.Request) {
 	if _, ok := WEB_PATH_MAP[r.URL.Path]; ok || r.URL.Path == common.PROXY_WEB_PREFIX_PATH {
 		http.StripPrefix(common.PROXY_WEB_PREFIX_PATH, http.FileServer(GetWebFS())).ServeHTTP(w, r)
 	} else {
+		if !helper.CheckAuth(r) {
+			helper.UnauthorizedResult(w)
+			return
+		}
 		common.NewSingleHostReverseProxy(common.BING_URL).ServeHTTP(w, r)
 	}
+
 }
