@@ -1,7 +1,21 @@
 {
   "name": "go-proxy-bingai",
   "version": 2,
+  "builds": [
+    {
+      "src": "/api/{index,sydney,sysConfig}.go",
+      "use": "@vercel/go"
+    }
+  ],
   "routes": [
+    {
+      "src": "/sysconf",
+      "dest": "/api/sysConfig"
+    },
+    {
+      "src": "/sydney/.*",
+      "dest": "/api/sydney"
+    },
     {
       "src": "/web/.*",
       "dest": "/api/web"
