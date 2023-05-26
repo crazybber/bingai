@@ -68,7 +68,7 @@
 
 ## 演示站点
 
-### bing magic轻虐
+### bing Web Copilot AI
 
 - https://bing.arch.run
 
@@ -219,7 +219,7 @@ RAILWAY_DOCKERFILE_PATH=docker/Dockerfile
 ## TODO
 
 - [x] 撰写
-- [x] Vue3 重构
+- [x] Vue3 Refactor
 - [x] 提示词
 - [x] 历史聊天
 - [x] 导出消息到本地（Markdown、图片、PDF）

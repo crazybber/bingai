@@ -1,9 +1,9 @@
 package main
 
 import (
-	"adams549659584/go-proxy-bingai/api"
-	"adams549659584/go-proxy-bingai/api/helper"
-	"adams549659584/go-proxy-bingai/common"
+	"crazybber/go-proxy-bingai/api"
+	"crazybber/go-proxy-bingai/api/helper"
+	"crazybber/go-proxy-bingai/common"
 	"log"
 	"net/http"
 	"os"
