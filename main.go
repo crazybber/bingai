@@ -25,9 +25,11 @@ func main() {
 
 	})
 
-	http.HandleFunc("/web/", webStatic)
+	http.HandleFunc("/sysconf", api.SysConf)
 
-	http.HandleFunc("/sydney/ChatHub", api.ChatHub)
+	http.HandleFunc("/sydney/", api.Sydney)
+
+	http.HandleFunc("/web/", webStatic)
 
 	http.HandleFunc("/", api.Index)
 
