@@ -8,6 +8,11 @@
     }
   ],
   "routes": [
+   
+      {
+        "src": "/web/.*",
+        "dest": "/api/web"
+      },
     {
       "src": "/sysconf",
       "dest": "/api/sysConfig"
@@ -15,10 +20,6 @@
     {
       "src": "/sydney/.*",
       "dest": "/api/sydney"
-    },
-    {
-      "src": "/web/.*",
-      "dest": "/web"
     },
     {
       "src": "/.*",
