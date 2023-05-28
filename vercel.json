@@ -17,10 +17,6 @@
       "dest": "/api/sydney"
     },
     {
-      "src": "/web/.*",
-      "dest": "/api/web"
-    },
-    {
       "src": "/.*",
       "dest": "/api/index"
     }
