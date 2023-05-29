@@ -6,7 +6,7 @@
   "buildCommand": "pnpm build",
   "functions": {
     "api/*.go": {
-      "runtime": "go@1.20.4"
+      "memory": 128
     }
   },
   "rewrites": [
