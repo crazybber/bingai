@@ -1,0 +1,12 @@
+{
+"name": "go-proxy-bingai",
+  "version": "1.8.2",
+  "private": true,
+  "scripts": {
+    "build-web": "cd frontend && pnpm build && cd ..",
+    "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go webfs.go",
+    "build": "pnpm build-web && pnpm build-go",
+    "run": "pnpm build-web && build-go",
+    "cm":"git add . && git commit -m 'refine file' && git push " 
+  }
+}
