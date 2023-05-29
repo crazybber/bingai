@@ -12,6 +12,6 @@
   "rewrites": [
     { "source": "/", "destination": "/web/index.html" },
     { "source": "/web", "destination": "/web/index.html" },
-    { "source": "/:path.*", "destination": "/api/index" }
+    { "source": "/:path(.*)", "destination": "/api/index" }
   ]
 }
