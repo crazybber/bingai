@@ -5,7 +5,7 @@
   "scripts": {
     "build-web": "cd frontend && pnpm install && pnpm build && cd ..",
     "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go webfs.go",
-    "build": "pnpm build-web && pnpm build-go",
+    "build": "pnpm build-web",
     "run": "pnpm build-web && build-go",
     "cm":"git add . && git commit -m 'refine file' && git push " 
   }
