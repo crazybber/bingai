@@ -2,8 +2,7 @@ package main
 
 import (
 	"crazybber/go-proxy-bingai/api"
-	"crazybber/go-proxy-bingai/api/helper"
-	"crazybber/go-proxy-bingai/common"
+	"embed"
 	"log"
 	"net/http"
 	"os"
@@ -11,10 +10,18 @@ import (
 )
 
 var (
+	//go:embed web/*
+	webFS     embed.FS
 	version   string = "latest"
 	buildDate string = "latest"
 	commitId  string = "crazybber"
 )
+
+// init to bundle the static files
+func init() {
+	api.WEB_FS = webFS
+	api.InitStaticPages()
+}
 
 func main() {
 
@@ -26,11 +33,11 @@ func main() {
 
 	})
 
-	http.HandleFunc("/sysconf", api.SysConf)
+	http.HandleFunc("/sysconf/", api.SysConf)
 
 	http.HandleFunc("/sydney/", api.Sydney)
 
-	http.HandleFunc("/web/", webStatic)
+	http.HandleFunc("/web/", api.WebStatic)
 
 	http.HandleFunc("/", api.Index)
 
@@ -48,18 +55,4 @@ func main() {
 		ReadTimeout:  15 * time.Second,
 	}
 	log.Fatal(srv.ListenAndServe())
-}
-
-// Serve static pages
-func webStatic(w http.ResponseWriter, r *http.Request) {
-	if _, ok := WEB_PATH_MAP[r.URL.Path]; ok || r.URL.Path == common.PROXY_WEB_PREFIX_PATH {
-		http.StripPrefix(common.PROXY_WEB_PREFIX_PATH, http.FileServer(GetWebFS())).ServeHTTP(w, r)
-	} else {
-		if !helper.CheckAuth(r) {
-			helper.UnauthorizedResult(w)
-			return
-		}
-		common.NewSingleHostReverseProxy(common.BING_URL).ServeHTTP(w, r)
-	}
-
 }

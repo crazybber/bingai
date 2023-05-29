@@ -1,29 +1,17 @@
 {
   "name": "go-proxy-bingai",
   "version": 2,
-  "builds": [
-    {
-      "src": "/api/{index,sydney,sysConfig}.go,main.go,webfs.go",
-      "use": "@vercel/go"
+  "regions": ["sin1"],
+  "trailingSlash": true,
+  "buildCommand": "pnpm build",
+  "functions": {
+    "api/*.go": {
+      "runtime": "@vercel/go"
     }
-  ],
-  "routes": [
-   
-      {
-        "src": "/web/.*",
-        "dest": "/api/web"
-      },
-    {
-      "src": "/sysconf",
-      "dest": "/api/sysConfig"
-    },
-    {
-      "src": "/sydney/.*",
-      "dest": "/api/sydney"
-    },
-    {
-      "src": "/.*",
-      "dest": "/api/index"
-    }
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/web/index.html" },
+    { "source": "/web", "destination": "/web/index.html" },
+    { "source": "/*", "destination": "/api/index" }
   ]
 }
