@@ -4,11 +4,6 @@
   "regions": ["sin1"],
   "trailingSlash": true,
   "buildCommand": "pnpm build",
-  "functions": {
-    "api/*.go": {
-      "runtime": "@vercel-go@1.20"
-    }
-  },
   "rewrites": [
     { "source": "/", "destination": "/web/index.html" },
     { "source": "/web", "destination": "/web/index.html" },
