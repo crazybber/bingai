@@ -6,7 +6,7 @@
   "buildCommand": "pnpm build",
   "functions": {
     "api/*.go": {
-      "runtime": "@vercel-go@1.20"
+      "runtime": "golang@1.20"
     }
   },
   "rewrites": [
