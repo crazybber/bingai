@@ -5,11 +5,6 @@
   "trailingSlash": true,
   "buildCommand": "pnpm build",
   "outputDirectory": "web",
-  "functions": {
-    "api/*.go": {
-      "memory": 128
-    }
-  },
   "rewrites": [
     { "source": "/", "destination": "/web/index.html" },
     { "source": "/web", "destination": "/web/index.html" },

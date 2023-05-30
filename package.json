@@ -3,17 +3,14 @@
   "version": "1.8.2",
   "license": "Mulan",
   "private": true,
-  "dependencies": {
-    "vercel": "^30.0.0"
-  },
   "scripts": {
-    "dev": "yarn install",
-    "setup": "yarn vercel login && pnpm vercel link",
-    "start": "yarn vercel dev",
+    "debug": "vercel --debug",
+    "setup": "vercel login && vercel link",
+    "start": "vercel build",
     "build-web": "cd frontend && pnpm install && pnpm build && cd ..",
-    "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go webfs.go",
+    "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go",
     "build": "pnpm build-web",
-    "run": "pnpm build-web && build-go",
+    "run-local": "pnpm build-web && build-go",
     "cm": "git add . && git commit -m 'refine file' && git push "
   }
 }
