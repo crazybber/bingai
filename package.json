@@ -3,15 +3,13 @@
   "version": "1.8.2",
   "license": "Mulan",
   "private": true,
-  "packageManager": "pnpm@6.32.3",
   "dependencies": {
-    "@vercel/build-utils": "^6.7.3",
-    "esbuild-darwin-arm64": "^0.15.18",
     "vercel": "^30.0.0"
   },
   "scripts": {
-    "setup": "pnpm install --no-frozen-lockfile && pnpm vercel login && pnpm vercel link",
-    "start": "pnpm vercel dev",
+    "dev": "yarn install",
+    "setup": "yarn vercel login && pnpm vercel link",
+    "start": "yarn vercel dev",
     "build-web": "cd frontend && pnpm install && pnpm build && cd ..",
     "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go webfs.go",
     "build": "pnpm build-web",
