@@ -4,6 +4,7 @@
   "regions": ["sin1"],
   "trailingSlash": true,
   "buildCommand": "pnpm build",
+  "outputDirectory": "web",
   "functions": {
     "api/*.go": {
       "memory": 128
