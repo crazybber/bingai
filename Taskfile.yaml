@@ -14,10 +14,9 @@ tasks:
       - rm -rf frontend/node_modules
       - rm -rf release
       # extended globbing is not supported
-      # - rm -rf web/!(web.go)
-      - cp web/web.go web.go
+      # - cp web/web.go web.go
       - rm -rf web/*
-      - mv web.go web/web.go
+      # - mv web.go web/web.go
   build_web:
     dir: frontend
     cmds:
@@ -228,8 +227,8 @@ tasks:
         }        
   docker:
     cmds:
-      - docker build -t adams549659584/go-proxy-bingai:{{.BUILD_VERSION}} -f docker/Dockerfile .
-      - docker tag adams549659584/go-proxy-bingai:{{.BUILD_VERSION}} adams549659584/go-proxy-bingai
+      - docker build -t crazybber/go-proxy-bingai:{{.BUILD_VERSION}} -f docker/Dockerfile .
+      - docker tag crazybber/go-proxy-bingai:{{.BUILD_VERSION}} crazybber/go-proxy-bingai
   default:
     cmds:
       - task: clean

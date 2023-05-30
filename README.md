@@ -1,6 +1,6 @@
 # go-proxy-bing
 
-基于微软 New Bing 用 Vue3 和 Go 简单定制的微软 New Bing 演示站点，拥有一致的 UI 体验，支持 ChatGPT 提示词，国内可用，基本兼容微软 Bing AI 所有功能，无需登录即可畅聊。
+基于New Bing+Vue3 +Go 简单定制的微软 New Bing 服务站点，拥有一致的 UI 体验，支持 ChatGPT 提示词，国内可用，基本兼容微软 Bing AI 所有功能，无需登录即可畅聊。
 
 ⭐ Bing 官方聊天服务器（相对较快和稳定，推荐）不可用时，可参考以下方案
 
@@ -22,7 +22,7 @@
   - [网页展示](#网页展示)
   - [侧边栏](#侧边栏)
   - [演示站点](#演示站点)
-  - [获取 Cookie](#获取Cookie)
+  - [获取Cookie](#获取Cookie)
   - [环境变量](#环境变量)
   - [部署](#部署)
     - [Docker](#Docker)
@@ -68,9 +68,9 @@
 
 ## 演示站点
 
-### 甲骨文小鸡仔，轻虐
+### bing Web Copilot AI
 
-- https://bing.vcanbb.top
+- https://bing.arch.run
 
 ### Railway 搭建
 
@@ -188,9 +188,9 @@ RAILWAY_DOCKERFILE_PATH=docker/Dockerfile
 
 ### Vercel
 
-> ⭐ Vercel 部署不支持 Websocket ，需选择 官方聊天服务器 或 Cloudflare
+> ⭐ Vercel 部署不支持 Websocket ，需选择官方聊天服务器 或 Cloudflare
 
-一键部署，点这里 => [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/adams549659584/go-proxy-bingai&project-name=go-proxy-bingai&repository-name=go-proxy-bingai-vercel)
+一键部署，点这里 => [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/crazybber/go-proxy-bingai&project-name=go-proxy-bingai&repository-name=go-proxy-bingai)
 
 ![Vercel 一键部署](./docs/img/vercel-1.png)
 
@@ -219,8 +219,12 @@ RAILWAY_DOCKERFILE_PATH=docker/Dockerfile
 ## TODO
 
 - [x] 撰写
-- [x] Vue3 重构
+- [x] Vue3 Refactor
 - [x] 提示词
 - [x] 历史聊天
 - [x] 导出消息到本地（Markdown、图片、PDF）
 - [x] 简单访问权限控制
+
+###  thanks
+
+a great tanks for [adams549659584](https://github.com/adams549659584/go-proxy-bingai)

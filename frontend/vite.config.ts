@@ -119,6 +119,7 @@ export default defineConfig(({ command, mode }) => {
     },
     build: {
       outDir: '../web',
+      emptyOutDir: true,
     },
   };
 });

@@ -1,9 +1,8 @@
-name: Build Go-Proxy-BingAI
+name: Build go-proxy-bingai
 on:
   push:
     tags:
       - v*
-
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -89,7 +88,7 @@ jobs:
           asset_name: go-proxy-bingai-linux-arm64.tar.gz
           asset_content_type: application/gzip
 
-      - name: build windows amd64 version
+      - name: build windows arm64 version
         run: |
           GOOS=windows GOARCH=arm64 go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai.exe main.go
 
@@ -119,14 +118,7 @@ jobs:
       - name: Setup timezone
         uses: zcong1993/setup-timezone@master
         with:
-          timezone: Asia/Shanghai
-
-      - name: Login to GHCR
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GH_TOKEN }}        
+          timezone: Asia/Shanghai      
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -148,8 +140,6 @@ jobs:
           file: ./docker/Dockerfile  
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:${{ github.ref_name }}
-            ghcr.io/${{ github.repository }}:latest
             docker.io/${{ github.repository }}:${{ github.ref_name }}
             docker.io/${{ github.repository }}:latest
           cache-from: type=registry,ref=${{ github.repository }}:cache
