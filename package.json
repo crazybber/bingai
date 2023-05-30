@@ -9,7 +9,7 @@
     "start": "vercel build",
     "build-web": "cd frontend && pnpm install && pnpm build && cd ..",
     "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go",
-    "build": "pnpm build-web",
+    "build": "pnpm i && pnpm build-web",
     "run-local": "pnpm build-web && build-go",
     "cm": "git add . && git commit -m 'refine file' && git push "
   }
