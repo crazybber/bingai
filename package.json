@@ -3,6 +3,7 @@
   "version": "1.8.2",
   "license": "Mulan",
   "private": true,
+  "packageManager": "pnpm@6.32.3",
   "dependencies": {
     "@vercel/build-utils": "^6.7.3",
     "esbuild-darwin-arm64": "^0.15.18",
