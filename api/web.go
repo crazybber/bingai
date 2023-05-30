@@ -1,8 +1,8 @@
 package api
 
 import (
-	"crazybber/go-proxy-bingai/api/helper"
 	"crazybber/go-proxy-bingai/common"
+	"crazybber/go-proxy-bingai/helper"
 	"embed"
 	"io/fs"
 	"net/http"

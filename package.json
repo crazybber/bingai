@@ -1,12 +1,15 @@
 {
-"name": "go-proxy-bingai",
   "version": "1.8.2",
+  "license": "Mulan",
   "private": true,
   "scripts": {
-    "build-web": "cd frontend && pnpm install && pnpm build && cd ..",
-    "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go webfs.go",
-    "build": "pnpm build-web",
-    "run": "pnpm build-web && build-go",
-    "cm":"git add . && git commit -m 'refine file' && git push " 
+    "debug": "vercel --debug",
+    "setup": "vercel login && vercel link",
+    "start": "vercel build",
+    "build-web": "cd frontend && pnpm install && pnpm build",
+    "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go",
+    "build": "pnpm i && pnpm build-web && cd ..",
+    "run-local": "pnpm build-web && build-go",
+    "cm": "git add . && git commit -m 'refine file' && git push "
   }
 }
