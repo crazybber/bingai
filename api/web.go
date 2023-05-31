@@ -6,13 +6,10 @@ import (
 	"embed"
 	"io/fs"
 	"net/http"
-	"os"
 	"path/filepath"
 )
 
 var (
-	// is debug or not
-	IS_DEBUG_MODE bool
 	//path mapping
 	WEB_PATH_MAP = make(map[string]bool)
 	//point to main webfs
@@ -20,11 +17,8 @@ var (
 )
 
 func InitStaticPages() {
-
-	IS_DEBUG_MODE = os.Getenv("Go_Proxy_BingAI_Debug") == "true"
-
 	var err error
-	if IS_DEBUG_MODE {
+	if common.IS_DEBUG_MODE {
 		err = initWebPathMapByDir()
 	} else {
 		err = initWebPathMapBywebFS()
@@ -75,7 +69,7 @@ func initWebPathMapBywebFS() error {
 }
 
 func GetWebFS() http.FileSystem {
-	if IS_DEBUG_MODE {
+	if common.IS_DEBUG_MODE {
 		return http.Dir("web")
 	} else {
 		return http.FS(WEB_FS)

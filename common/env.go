@@ -37,9 +37,9 @@ func initEnv() {
 }
 
 func initUserToken() {
-	for _, env := range os.Environ() {
-		if strings.HasPrefix(env, USER_TOKEN_ENV_NAME_PREFIX) {
-			parts := strings.SplitN(env, "=", 2)
+	for _, envVarItem := range os.Environ() {
+		if strings.HasPrefix(envVarItem, USER_TOKEN_ENV_NAME_PREFIX) {
+			parts := strings.SplitN(envVarItem, "=", 2)
 			USER_TOKEN_LIST = append(USER_TOKEN_LIST, parts[1])
 		}
 	}
