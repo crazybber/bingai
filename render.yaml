@@ -1,8 +1,8 @@
 services:
   - type: web
     name: go-proxy-bingai
-    # oregon: frankfurt
+    oregon: Singapore
     plan: free
     env: go
-    buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai main.go
+    buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai main.go webfs.go
     startCommand: ./go-proxy-bingai
