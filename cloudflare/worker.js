@@ -70,6 +70,29 @@ const getRandomIP = () => {
   return randomIP;
 };
 
+/**
+ * home
+ * @param {string} pathname
+ * @returns
+ */
+const home = async (pathname) => {
+  const baseUrl = 'https://raw.githubusercontent.com/crazybber/go-proxy-bingai/master/';
+  let url;
+  // if (pathname.startsWith('/github/')) {
+  if (pathname.indexOf('/github/') === 0) {
+    url = pathname.replace('/github/', baseUrl);
+  } else {
+    url = baseUrl + 'cloudflare/index.html';
+  }
+  const res = await fetch(url);
+  const newRes = new Response(res.body, res);
+  if (pathname === '/') {
+    newRes.headers.delete('content-security-policy');
+    newRes.headers.set('content-type', 'text/html; charset=utf-8');
+  }
+  return newRes;
+};
+
 export default {
   /**
    * fetch
@@ -80,6 +103,10 @@ export default {
    */
   async fetch(request, env, ctx) {
     const currentUrl = new URL(request.url);
+    // if (currentUrl.pathname === '/' || currentUrl.pathname.startsWith('/github/')) {
+    if (currentUrl.pathname === '/' || currentUrl.pathname.indexOf('/github/') === 0) {
+      return home(currentUrl.pathname);
+    }
     const targetUrl = new URL(SYDNEY_ORIGIN + currentUrl.pathname + currentUrl.search);
 
     const newHeaders = new Headers();
@@ -97,13 +124,12 @@ export default {
     newHeaders.set('X-Forwarded-For', randIP);
     const oldUA = request.headers.get('user-agent');
     const isMobile = oldUA.includes('Mobile') || oldUA.includes('Android');
+    const userAgentMobile = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148';
+    const userAgentPC = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35';
     if (isMobile) {
-      newHeaders.set(
-        'user-agent',
-        'Mozilla/5.0 (iPhone; CPU iPhone OS 15_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.7 Mobile/15E148 Safari/605.1.15 BingSapphire/1.0.410427012'
-      );
+      newHeaders.set('user-agent',userAgentMobile);
     } else {
-      newHeaders.set('user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35');
+      newHeaders.set('user-agent', userAgentPC);
     }
 
     // newHeaders.forEach((value, key) => console.log(`${key} : ${value}`));
@@ -115,10 +141,5 @@ export default {
     // console.log('request url : ', newReq.url);
     const res = await fetch(newReq);
     return res;
-    // const newRes = new Response(res.body, res);
-    // newRes.headers.set('access-control-allow-origin', '*');
-    // newRes.headers.set('access-control-allow-methods', '*');
-    // newRes.headers.set('access-control-allow-headers', '*');
-    // return newRes;
   },
 };

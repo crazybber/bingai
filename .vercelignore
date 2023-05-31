@@ -1,0 +1,6 @@
+node_modules/*
+fronted/node_modules/*
+.github/*
+.vscode/*
+.yarn/*
+./pnpm/*

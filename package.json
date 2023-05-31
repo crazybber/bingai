@@ -10,6 +10,6 @@
     "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go",
     "build": "pnpm i && pnpm build-web && cd ..",
     "run-local": "pnpm build-web && build-go",
-    "cm": "git add . && git commit -m 'refine file' && git push "
+    "cm": "git add . && git commit -m 'merge dev and up' && git push "
   }
 }
