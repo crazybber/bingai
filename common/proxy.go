@@ -201,7 +201,7 @@ func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 		return nil
 	}
 	errorHandler := func(res http.ResponseWriter, req *http.Request, err error) {
-		log.Println("代理异常 ：", err)
+		log.Println("Proxy Exception ：", err)
 		res.Write([]byte(err.Error()))
 	}
 
