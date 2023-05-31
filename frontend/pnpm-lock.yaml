@@ -80,8 +80,26 @@ devDependencies:
     specifier: ^0.14.7
     version: 0.14.7(vite@4.3.9)(workbox-build@6.6.0)(workbox-window@6.6.0)
   vue-tsc:
-    specifier: ^1.6.5
+    specifier: ^1.6.4
     version: 1.6.5(typescript@5.0.4)
+  workbox-cacheable-response:
+    specifier: ^6.6.0
+    version: 6.6.0
+  workbox-expiration:
+    specifier: ^6.6.0
+    version: 6.6.0
+  workbox-precaching:
+    specifier: ^6.6.0
+    version: 6.6.0
+  workbox-routing:
+    specifier: ^6.6.0
+    version: 6.6.0
+  workbox-strategies:
+    specifier: ^6.6.0
+    version: 6.6.0
+  workbox-window:
+    specifier: ^6.6.0
+    version: 6.6.0
 
 packages:
 
