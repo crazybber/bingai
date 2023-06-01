@@ -27,7 +27,7 @@ func init() {
 
 func initEnv() {
 	// is debug
-	IS_DEBUG_MODE = os.Getenv("Go_Proxy_BingAI_Debug") != ""
+	IS_DEBUG_MODE = os.Getenv("Go_Proxy_BingAI_Debug") == "true"
 	// socks
 	SOCKS_URL = os.Getenv("Go_Proxy_BingAI_SOCKS_URL")
 	SOCKS_USER = os.Getenv("Go_Proxy_BingAI_SOCKS_USER")

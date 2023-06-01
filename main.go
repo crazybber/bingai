@@ -39,7 +39,7 @@ func main() {
 
 	http.HandleFunc("/web/", api.WebStatic)
 
-	http.HandleFunc("/*", api.Index)
+	http.HandleFunc("/", api.Index)
 
 	port := os.Getenv("PORT")
 	if port == "" {
