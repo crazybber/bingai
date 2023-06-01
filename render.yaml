@@ -6,10 +6,3 @@ services:
     env: go
     buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o app
     startCommand: ./app
-    routes:
-      - type: rewrite
-        source: /
-        destination: /web/index.html
-      - type: rewrite
-        source: /web
-        destination: /web/index.html
