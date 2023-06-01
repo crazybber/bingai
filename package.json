@@ -6,7 +6,7 @@
     "debug": "vercel --debug",
     "setup": "vercel login && vercel link",
     "start": "vercel build",
-    "build-web": "cd frontend && pnpm install && pnpm build && rm -f node_modules/* ",
+    "build-web": "cd frontend && pnpm install && pnpm build && rm -rdf node_modules ",
     "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go",
     "build": "pnpm i && pnpm build-web && cd ..", 
     "run-local": "pnpm build-web && build-go",
