@@ -4,9 +4,8 @@
   "trailingSlash": true,
   "buildCommand": "pnpm build",
   "outputDirectory": ".",
-  "rewrites": [
+  "redirects": [
     { "source": "/", "destination": "/web/index.html" },
-    { "source": "/web", "destination": "/web/index.html" },
-    { "source": "/:path(.*)", "destination": "/api/index" }
+    { "source": "/web", "destination": "/web/index.html" }
   ]
 }
