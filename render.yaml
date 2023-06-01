@@ -4,5 +4,12 @@ services:
     oregon: Singapore
     plan: free
     env: go
-    buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai main.go webfs.go
+    buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai main.go
     startCommand: ./go-proxy-bingai
+    routes:
+      - type: redirect
+        source: /
+        destination: /web/index.html
+      - type: redirect
+        source: /web
+        destination: /web/index.html
