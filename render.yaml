@@ -4,8 +4,8 @@ services:
     #oregon: Singapore
     plan: free
     env: go
-    buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai main.go
-    startCommand: ./go-proxy-bingai
+    buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o app
+    startCommand: ./app
     routes:
       - type: rewrite
         source: /

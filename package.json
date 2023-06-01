@@ -6,9 +6,9 @@
     "debug": "vercel --debug",
     "setup": "vercel login && vercel link",
     "start": "vercel build",
-    "build-web": "cd frontend && pnpm install && pnpm build",
+    "build-web": "cd frontend && pnpm install && pnpm build && rm -rdf node_modules ",
     "build-go": "go build -ldflags='-s -w' -tags netgo -trimpath -o go-proxy-bingai main.go",
-    "build": "pnpm i && pnpm build-web && cd ..",
+    "build": "pnpm i && pnpm build-web && cd ..", 
     "run-local": "pnpm build-web && build-go",
     "cm": "git add . && git commit -m 'merge dev and up' && git push "
   }
