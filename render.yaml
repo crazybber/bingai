@@ -7,9 +7,9 @@ services:
     buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai main.go
     startCommand: ./go-proxy-bingai
     routes:
-      - type: redirect
+      - type: rewrite
         source: /
         destination: /web/index.html
-      - type: redirect
+      - type: rewrite
         source: /web
         destination: /web/index.html
