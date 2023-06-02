@@ -3,9 +3,5 @@
   "regions": ["sin1"],
   "trailingSlash": true,
   "buildCommand": "pnpm build",
-  "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/", "destination": "/web/index.html" },
-    { "source": "/web", "destination": "/web/index.html" }
-  ]
+  "outputDirectory": "."
 }
