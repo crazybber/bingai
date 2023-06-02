@@ -7,7 +7,7 @@
   "rewrites": [
     { "source": "/", "destination": "/web/index.html" },
     { "source": "/web", "destination": "/web/" },
-    { "source": "/sysconf", "destination": "/api/sys-conf"},
+    { "source": "/sysconf", "destination": "/api/sys-config"},
     { "source": "/sydney", "destination": "/api/sydney" },
     { "source": "/(.*)", "destination": "/api/index" }
   ]
