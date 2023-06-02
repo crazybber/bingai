@@ -3,5 +3,12 @@
   "regions": ["sin1"],
   "trailingSlash": true,
   "buildCommand": "pnpm build",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/", "destination": "/web/index.html" },
+    { "source": "/web", "destination": "/web/" },
+    { "source": "/sysconf", "destination": "/api/sys-conf"},
+    { "source": "/sydney", "destination": "/api/sydney" },
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
 }
