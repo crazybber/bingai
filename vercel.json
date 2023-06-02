@@ -4,8 +4,11 @@
   "trailingSlash": true,
   "buildCommand": "pnpm build",
   "outputDirectory": ".",
-  "redirects": [
+  "rewrites": [
     { "source": "/", "destination": "/web/index.html" },
-    { "source": "/web", "destination": "/web/index.html" }
+    { "source": "/web", "destination": "/web/" },
+    { "source": "/sysconf", "destination": "/api/sys-config"},
+    { "source": "/sydney", "destination": "/api/sydney" },
+    { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
