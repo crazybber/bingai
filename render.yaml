@@ -3,6 +3,12 @@ services:
     name: go-proxy-bingai
     oregon: Singapore
     plan: free
-    env: go
+    runtime: go
     buildCommand: go build -ldflags="-s -w" -tags netgo -trimpath -o app
     startCommand: ./app
+    buildFilter:
+      paths:
+      - frontend/**/*.js
+      - ./**/*.go
+      ignoredPaths:
+      - api/**/*_test.go

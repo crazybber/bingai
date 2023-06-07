@@ -3,10 +3,11 @@
 基于New Bing+Vue3 +Go 简单定制的微软 New Bing 服务站点，拥有一致的 UI 体验，支持 ChatGPT 提示词，国内可用，基本兼容微软 Bing AI 所有功能，无需登录即可畅聊。
 
 ## Change logs
-- 当前Fork，对代码做了一些调整和重构。
-- Vercel支持了多阶段自动编译，本地只要写代码，vercel自动编译Vue和Go，并自动部署，具体看可以看一下跟目录下vercel.json和package.json.
-- Render是可以支持Websocket 直接部署可以用不需要魔法，但是需要你本地先build Vue前端，在push到仓库后，同步blueprints部署Go。
-  - 这个可以继续看一下是否也可以在render是多阶段编译后的自动部署。
+- 当前Fork，对代码做了一些调整和重构，合并web目录中的Go代码文件到api和main中
+- Vercel支持了多阶段自动编译，本地只要写代码，vercel自动编译Vue和Go，并自动部署，具体看可以看一下跟目录下vercel.json和package.json
+- Render是可以支持Websocket 直接部署可以用不需要魔法，但是需要你本地先build Vue前端，在push到仓库后，同步blueprints部署Go
+  - 这个可以继续看一下是否也可以在render使用多阶段编译后的自动部署
+  - 或者过一段时间等render的docker deploy能力完善，直接使用docker来多阶段编译部署
 
 ## Instruction
 
