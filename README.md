@@ -2,6 +2,14 @@
 
 基于New Bing+Vue3 +Go 简单定制的微软 New Bing 服务站点，拥有一致的 UI 体验，支持 ChatGPT 提示词，国内可用，基本兼容微软 Bing AI 所有功能，无需登录即可畅聊。
 
+## Change logs
+- 当前Fork，对代码做了一些调整和重构。
+- Vercel支持了多阶段自动编译，本地只要写代码，vercel自动编译Vue和Go，并自动部署，具体看可以看一下跟目录下vercel.json和package.json.
+- Render是可以支持Websocket 直接部署可以用不需要魔法，但是需要你本地先build Vue前端，在push到仓库后，同步blueprints部署Go。
+  - 这个可以继续看一下是否也可以在render是多阶段编译后的自动部署。
+
+## Instruction
+
 ⭐ Bing 官方聊天服务器（相对较快和稳定，推荐）不可用时，可参考以下方案
 
   > 1. 可用 ModHeader 添加 X-Forwarded-For 请求头，对应 URL 是 wss://sydney.bing.com/sydney/ChatHub，具体可参考 [issues #71](https://github.com/adams549659584/go-proxy-bingai/issues/71) 及 https://zhuanlan.zhihu.com/p/606655303
@@ -68,10 +76,6 @@
 
 ## 演示站点
 
-### bing Web Copilot AI
-
-- https://bing.arch.run
-
 ### Railway 搭建
 
 - https://bing-railway.vcanbb.top
@@ -118,7 +122,7 @@ Go_Proxy_BingAI_USER_TOKEN_3=xxx ...
 Go_Proxy_BingAI_AUTH_KEY=xxx
 ```
 
-## 部署
+## 私有化基于部署
 
 > ⭐ 需 https 域名 (自行配置 nginx 等) (前后端都有限制 只有在HTTPS的情况下，浏览器 Accept-Encoding 才会包含 br , localhost 除外)
 
@@ -126,7 +130,7 @@ Go_Proxy_BingAI_AUTH_KEY=xxx
 
 > 国内机器部署可配置 socks 环境变量
 
-### Docker
+### Docker部署
 
 > 参考 [Dockerfile](./docker/Dockerfile) 、[docker-compose.yml](./docker/docker-compose.yml)
 
