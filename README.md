@@ -1,8 +1,8 @@
-# go-proxy-bing
+# bingai
 
 基于New Bing+Vue3 +Go 简单定制的微软 New Bing 服务站点，拥有一致的 UI 体验，支持 ChatGPT 提示词，国内可用，基本兼容微软 Bing AI 所有功能，无需登录即可畅聊。
 
-## Change logs
+## Changelogs
 - 当前Fork，对代码做了一些调整和重构，合并web目录中的Go代码文件到api和main中
 - Vercel支持了多阶段自动编译，本地只要写代码，vercel自动编译Vue和Go，并自动部署，具体看可以看一下跟目录下vercel.json和package.json
 - Render是可以支持Websocket 直接部署可以用不需要魔法，但是需要你本地先build Vue前端，在push到仓库后，同步blueprints部署Go
