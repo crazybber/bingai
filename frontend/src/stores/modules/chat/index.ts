@@ -32,6 +32,11 @@ export const useChatStore = defineStore(
         label: 'Cloudflare',
       },
       {
+        baseUrl: 'https://www.agbgpt.com/',
+        label: 'agbgpt',
+
+      },
+      {
         baseUrl: location.origin,
         label: '本站',
       },
