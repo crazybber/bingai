@@ -38,7 +38,7 @@
     - [Release](#Release)
     - [Railway](#Railway)
     - [Vercel](#Vercel)
-    - [Render](#Render)
+    - [Render](#Render) ~~该平台已封该项目及所有关联项目，请勿再用~~
   - [部署聊天服务器](#部署聊天服务器)
   - [TODO](#TODO)
 
@@ -89,7 +89,7 @@
 
 - https://go-proxy-bingai-adams549659584.vercel.app
 
-### ～～Render 搭建（这平台不靠谱，封了本项目的所有关联项目）～～
+### ~~Render 搭建（这平台不靠谱，封了本项目的所有关联项目）~~
 
 - https://bing-render.vcanbb.top
 
@@ -201,7 +201,7 @@ RAILWAY_DOCKERFILE_PATH=docker/Dockerfile
 
 ![Vercel 域名](./docs/img/vercel-2.png)
 
-### Render ～～（该平台不靠谱，已封了本项目以及所有关联项目）～～
+### Render ~~（该平台不靠谱，已封了本项目以及所有关联项目）~~
 
 一键部署，点这里 => [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/adams549659584/go-proxy-bingai)
 
